@@ -1,0 +1,25 @@
+body {
+    font-size: 100%;
+    font-family: Arial;
+}
+
+a {
+    color: #0b79e5;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+a.visit_tracking:visited {
+    color: #aaa;
+}
+
+div.feed_link_div {
+    margin: 0px 0px 5px 5px;
+}
+
+div.post_link_div {
+    margin: 0px 0px 20px 5px;
+}

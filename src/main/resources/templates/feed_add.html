@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>feeds/add</title>
+        <link rel="stylesheet" th:href="@{/css/feedread.css}" href="../static/css/feedread.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <form method="get" th:action="@{/add}">
+            <table>
+                <tr>
+                    <td>Feed URL</td>
+                    <td><input name="url" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Title</td>
+                    <td><input name="title" type="text"></td>
+                </tr>
+            </table>
+            <input type="submit">
+        </form>
+    </body>
+</html>

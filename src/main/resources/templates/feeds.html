@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>feeds</title>
+        <link rel="stylesheet" th:href="@{/css/feedread.css}" href="../static/css/feedread.css">
+        <meta http-equiv="refresh" content="60" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <th:block th:each="feedInfo : ${feeds}">
+            <div class="feed_link_div" th:if="${feedInfo.unread == 0}">
+                <a th:href="@{posts(feed=${feedInfo.feedLink.id})}"><span th:text="${feedInfo.feedLink.title}"></span></a>
+            </div>
+            <div class="feed_link_div" th:if="${feedInfo.unread > 0}">
+                <a th:href="@{posts(feed=${feedInfo.feedLink.id})}"><b><span th:text="${feedInfo.feedLink.title} + ' (' + ${feedInfo.unread} + ')'"></span></b></a>
+            </div>
+        </th:block>
+        <br>
+        <a th:href="@{/add}">+feed</a>
+    </body>
+</html>

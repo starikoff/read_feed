@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>posts</title>
+        <link rel="stylesheet" th:href="@{/css/feedread.css}" href="../static/css/feedread.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <h1>
+            <label th:text="${feed.title}"></label>
+            <a th:href="@{/read(feed=${feed.id})}">read</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a th:href="@{/delete(feed=${feed.id})}">[x]</a>
+        </h1>
+        <th:block th:each="post : ${posts}">
+            <div class="post_link_div">
+                <a class="visit_tracking" th:href="${post.link}"><span th:text="${post.title}"></span></a> <br>
+            </div>
+        </th:block>
+
+    </body>
+</html>
